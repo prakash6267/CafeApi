@@ -50,7 +50,7 @@ router.post('/', upload.single('image'),async (req,res)=>{
 
 router.delete('/:id', (req, res)=>{
        
-  Banner.findOneAndDelete(req.params.id)
+  Banner.findByIdAndDelete(req.params.id)
   .then(banner =>{
       if(banner){
           return res.status(200).json({
